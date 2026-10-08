@@ -20,6 +20,7 @@ class MultiplyState(TypedDict):
 
 
 def multiplier(state: MultiplyState) -> dict:
+    print(f'经过 multiplier, 当前状态: {state}')
     return {"factor": 2.0}
 
 

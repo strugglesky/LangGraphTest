@@ -18,6 +18,8 @@ def run_demo():
     builder.add_edge("multiplier", END)
     graph = builder.compile()
 
+    print(graph.get_graph().print_ascii())
+
     result = graph.invoke({"factor": 5.0})
     print(f"初始状态: {{'factor': 5.0}}")
     print(f"执行结果: {result}")
