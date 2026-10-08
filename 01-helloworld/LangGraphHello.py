@@ -45,6 +45,7 @@ graph.add_edge("add_emoji", END)
 
 # 4. 编译图，得到可执行的 app
 app = graph.compile()
+print(type(app))
 
 # 5. 运行：invoke 只接收一个核心参数——初始状态字典
 result = app.invoke({"name": "z3"})
