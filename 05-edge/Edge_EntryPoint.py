@@ -62,8 +62,6 @@ def main():
     print(graph.get_graph().print_ascii())
     print("=================================")
     print()
-    # 打印图的可视化结构，生成更加美观的Mermaid 代码，通过processon 编辑器查看
-    print(graph.get_graph().draw_mermaid())
 
 
 if __name__ == "__main__":

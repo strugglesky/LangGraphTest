@@ -43,6 +43,7 @@ retry_policy = RetryPolicy(
 stateGraph = StateGraph(GraphState)
 stateGraph.add_node("input", input_node)
 process_with_params = partial(process_node, param1=100, param2="test")
+print(type(process_with_params))  # <class 'functools.partial'>
 stateGraph.add_node("process", process_with_params, retry_policy=retry_policy)
 stateGraph.add_edge(START, "input")
 stateGraph.add_edge("input", "process")

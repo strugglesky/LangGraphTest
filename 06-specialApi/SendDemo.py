@@ -82,7 +82,9 @@ def main():
     builder.add_conditional_edges(
         "generate_subjects",  # 源节点
         map_subjects_to_jokes,  # 路由函数，返回Send对象列表
+        ["make_joke"],  # path_map：显式声明Send可能的目标节点，绘图时才会画出这条边
     )
+# ... existing code ...
 
     # 从make_joke到结束
     builder.add_edge("make_joke", END)

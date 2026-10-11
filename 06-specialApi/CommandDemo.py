@@ -158,7 +158,7 @@ def main():
 
     # 新增：可视化图结构（教学演示必备）
     print("\n=== 图结构可视化 ===")
-    print(graph.get_graph().draw_mermaid())
+    print(graph.get_graph().print_ascii())
 
 
 if __name__ == "__main__":
