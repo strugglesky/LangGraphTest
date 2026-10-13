@@ -21,18 +21,21 @@ def main():
     StateGraph(DiliState)
     .add_node("refine_topic", refine_topic)
     .add_node("generate_joke", generate_joke)
-    .add_node("add_messages", add_messages)
     .add_edge(START, "refine_topic")
     .add_edge("refine_topic", "generate_joke")
-    .add_edge("generate_joke", "add_messages")
-    .add_edge("add_messages", END)
+    .add_edge("generate_joke", END)
     .compile()
     )
 
-    print(graph.get)
+    print(graph.get_graph().print_ascii())
 
+    print('values模式')
     for chunk in graph.stream({"topic": "ice cream"}, stream_mode="values"):
         print(chunk)
 
+    print('updates模式')
     for chunk in graph.stream({"topic": "ice cream"}, stream_mode="updates"):
         print(chunk)
+
+if __name__ == '__main__':
+    main()
